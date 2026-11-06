@@ -407,9 +407,9 @@ The core score prediction dataset (`score_prediction_dataset.csv`) consists of p
 ### 5.2 Feature Engineering & Extraction
 To capture match state momentum accurately, two critical rolling features were engineered:
 1. **`current_over_float`:**
-   $$\text{current\_over\_float} = \text{over} + \frac{\text{ball}}{6}$$
+   $$\text{Over Progression} = \text{over} + \frac{\text{ball}}{6}$$
 2. **Rolling 5-Over Indicators:** Calculated using backward window functions over the preceding 30 legal balls:
-   $$\text{runs\_last\_5\_overs} = \sum_{b=i-29}^{i} \text{runs}_b, \quad \text{wickets\_last\_5\_overs} = \sum_{b=i-29}^{i} \text{wickets}_b$$
+   $$\text{Runs (Last 5 Overs)} = \sum_{b=i-29}^{i} \text{runs}_b, \quad \text{Wickets (Last 5 Overs)} = \sum_{b=i-29}^{i} \text{wickets}_b$$
 
 ### 5.3 Machine Learning Formulations & Algorithms
 

@@ -111,15 +111,15 @@ CricketIQ utilizes a rich, granular ball-by-ball dataset compiled from the open-
 ### Feature Engineering Pipeline
 To ensure the machine learning models capture short-term momentum shifts and non-linear innings acceleration, three critical transformations are executed:
 
-1. **Continuous Over Progression:**
-   $$\text{current\_over\_float} = \text{over} + \left( \frac{\text{ball}}{6} \right)$$
+1. **Continuous Over Progression (`current_over_float`):**
+   $$\text{Over Progression} = \text{over} + \left( \frac{\text{ball}}{6} \right)$$
    *(e.g., Over 10, Ball 3 becomes $10 + \frac{3}{6} = 10.5$ overs)*
 
-2. **Instantaneous Run Rate (CRR):**
-   $$\text{current\_run\_rate} = \frac{\text{cumulative\_runs}}{\text{current\_over\_float}}$$
+2. **Instantaneous Run Rate (`current_run_rate`):**
+   $$\text{CRR} = \frac{\text{Cumulative Runs}}{\text{Over Progression}}$$
 
 3. **Rolling 5-Over Momentum Window (Backward 30-Ball Slicing):**
-   $$\text{runs\_last\_5\_overs} = \sum_{b=i-29}^{i} \text{runs}_b, \qquad \text{wickets\_last\_5\_overs} = \sum_{b=i-29}^{i} \text{wickets}_b$$
+   $$\text{Runs (Last 5 Overs)} = \sum_{b=i-29}^{i} \text{runs}_b, \qquad \text{Wickets (Last 5 Overs)} = \sum_{b=i-29}^{i} \text{wickets}_b$$
 
 4. **Categorical Pipeline:** Categorical stadium and team vectors (`venue`, `team1`, `team2`) are processed via Scikit-Learn's `OneHotEncoder(handle_unknown='ignore')` combined with numeric passthrough via `ColumnTransformer`.
 
@@ -299,12 +299,6 @@ The models were evaluated on an unseen held-out test split of 62,322 deliveries 
 | **Random Forest Regressor** | **0.9985** | **1.12** | **1.85** | **Top Performer — Exceptional precision across all 20 overs** |
 | **XGBoost Regressor** | **0.9977** | **1.45** | **2.21** | High Performance — Sub-millisecond inference latency |
 | **Linear Regression** | **0.9738** | **4.82** | **6.74** | Baseline — Higher error during sudden wicket collapses |
-
-$$\begin{array}{rcc}
-\textbf{Random Forest:} & R^2 = \mathbf{0.9985} & \text{MAE} = \mathbf{1.12\text{ runs}} \\
-\textbf{XGBoost:}       & R^2 = \mathbf{0.9977} & \text{MAE} = \mathbf{1.45\text{ runs}} \\
-\textbf{Linear Reg:}    & R^2 = \mathbf{0.9738} & \text{MAE} = \mathbf{4.82\text{ runs}}
-\end{array}$$
 
 ---
 

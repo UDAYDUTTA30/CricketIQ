@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+sqlalchemy
+pandas
+numpy
+pyarrow
+scikit-learn
+shap
+xgboost
+pydantic
+pytest
+httpx

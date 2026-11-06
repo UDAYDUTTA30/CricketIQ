@@ -1,5 +1,9 @@
 # 🏏 CricketIQ — AI-Powered T20 Cricket Analytics & Explainable Score Prediction
 
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Vercel-success?style=for-the-badge&logo=vercel&logoColor=white)](https://cricket-iq-sand.vercel.app/)
+[![Backend API](https://img.shields.io/badge/Backend_API-Render-informational?style=for-the-badge&logo=render&logoColor=white)](https://cricketiq-backend-vnx7.onrender.com/)
+[![API Docs](https://img.shields.io/badge/Swagger-API_Docs-brightgreen?style=for-the-badge&logo=swagger&logoColor=white)](https://cricketiq-backend-vnx7.onrender.com/docs)
+
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg?logo=python&logoColor=white)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.110%2B-009688.svg?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
 [![React](https://img.shields.io/badge/React-18-61DAFB.svg?logo=react&logoColor=black)](https://reactjs.org/)
@@ -14,8 +18,19 @@
 
 ---
 
+## 🌐 Live Deployments
+
+| Component | Platform | Live URL | Status & Description |
+| :--- | :---: | :--- | :--- |
+| **Frontend Web App** | **Vercel** | [**cricket-iq-sand.vercel.app**](https://cricket-iq-sand.vercel.app/) | 🟢 **Live** — Interactive React dashboard, Score Predictor & SHAP charts |
+| **Backend REST API** | **Render** | [**cricketiq-backend-vnx7.onrender.com**](https://cricketiq-backend-vnx7.onrender.com/) | 🟢 **Live** — FastAPI ML inference engine & SQLite database |
+| **Interactive API Docs** | **Swagger** | [**cricketiq-backend-vnx7.onrender.com/docs**](https://cricketiq-backend-vnx7.onrender.com/docs) | 🟢 **Live** — Interactive OpenAPI testing interface |
+
+---
+
 ## 📌 Table of Contents
 
+- [Live Deployments](#-live-deployments)
 - [Overview & Motivation](#-overview--motivation)
 - [Key Features](#-key-features)
 - [Model Architecture & Benchmarks](#-model-architecture--benchmarks)
